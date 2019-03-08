@@ -1,0 +1,129 @@
+
+
+
+Username: alexandre, login Time: Tue Mar  5 12:38:12 2019
+
+Username: alexandre, login Time: Tue Mar  5 12:38:52 2019
+
+Username: alexandre, login Time: Tue Mar  5 12:39:47 2019
+
+Username: alexandre, login Time: Tue Mar  5 12:41:59 2019
+
+Username: alexandre, login Time: Tue Mar  5 12:43:10 2019
+, client IP: 0.0.0.0
+Username: alexandre, login Time: Tue Mar  5 12:44:28 2019
+, client IP: 167.39.155.240
+Username: alexandre, login Time: Tue Mar  5 12:45:02 2019
+, client IP: 0.0.0.0
+Username: alexandre, login Time: Tue Mar  5 12:45:09 2019
+, client IP: 58.52.53.58
+Username: alexandre, login Time: Tue Mar  5 12:45:32 2019
+, client IP: 167.39.155.240
+Username: alexandre, login Time: Tue Mar  5 12:45:38 2019
+, client IP: 167.39.155.240
+Username: alexandre, login Time: Tue Mar  5 12:46:18 2019
+, client IP: 0.0.0.0
+Username: alexandre, login Time: Tue Mar  5 12:54:18 2019
+, client IP: 0.0.0.0
+Username: alexandre, login Time: Tue Mar  5 12:54:41 2019
+, client IP: 167.39.155.240
+Login verification failed. Aborting.
+Username: alexandre, login Time: Tue Mar  5 14:31:15 2019
+, client IP: 58.51.49.58
+Username: alexandre, login Time: Tue Mar  5 14:45:25 2019
+, connection type: UDP
+Username: alexandre, login Time: Tue Mar  5 15:10:47 2019
+, connection type: UDP
+Username: alexandre, login Time: Tue Mar  5 15:12:43 2019
+, connection type: UDP, server IP: 127.0.0.1
+Username: alexandre, login Time: Tue Mar  5 15:14:19 2019
+, connection type: TCP, client IP: 0.0.0.0, server IP: 127.0.0.1
+Username: alexandre, login Time: Tue Mar  5 15:25:10 2019
+, connection type: TCP, client IP: 167.39.155.240, server IP: 127.0.0.1
+Username: alexandre, login Time: Tue Mar  5 15:25:16 2019
+, connection type: TCP, client IP: 111.110.32.116, server IP: 127.0.0.1
+Username: alexandre, login Time: Tue Mar  5 15:25:22 2019
+, connection type: TCP
+Username: alexandre, login Time: Tue Mar  5 15:25:48 2019
+, connection type: TCP, client IP: 0.0.0.0, server IP: 127.0.0.1
+Username: alexandre, login Time: Tue Mar  5 15:26:00 2019
+, connection type: TCP, client IP: 0.0.0.0, server IP: 127.0.0.1
+Username: alexandre, login Time: Tue Mar  5 15:26:04 2019
+, connection type: TCP, client IP: 0.0.0.0, server IP: 127.0.0.1
+Username: alexandre, login Time: Tue Mar  5 15:26:09 2019
+, connection type: TCP, client IP: 0.0.0.0, server IP: 127.0.0.1
+Username: alexandre, login Time: Tue Mar  5 15:28:58 2019
+, connection type: TCP, client IP: 167.39.155.240, server IP: 127.0.0.1
+Login verification failed. Aborting.
+Username: alexandre, login Time: Tue Mar  5 15:29:06 2019
+, connection type: TCP, client IP: 0.0.0.0, server IP: 127.0.0.1
+Username: alexandre, login Time: Tue Mar  5 15:29:13 2019
+, connection type: TCP
+Username: alexandre, login Time: Tue Mar  5 15:34:42 2019
+, connection type: TCP
+Username: alexandre, login Time: Tue Mar  5 15:34:55 2019
+, connection type: TCP
+Username: alexandre, login Time: Tue Mar  5 15:41:38 2019
+, connection type: TCP, client IP: 0.0.0.0, server IP: 127.0.0.1
+Username: alexandre, login Time: Tue Mar  5 15:41:48 2019
+, connection type: TCP
+Username: alexandre, login Time: Tue Mar  5 15:42:03 2019
+, connection type: TCP, client IP: 0.0.0.0, server IP: 127.0.0.1
+Username: alexandre, login Time: Tue Mar  5 15:42:09 2019
+, connection type: TCP, client IP: 0.0.0.0, server IP: 127.0.0.1
+Username: alexandre, login Time: Tue Mar  5 15:42:13 2019
+, connection type: TCP
+Username: alexandre, login Time: Tue Mar  5 15:42:24 2019
+, connection type: TCP, client IP: 0.0.0.0, server IP: 127.0.0.1
+Username: alexandre, login Time: Tue Mar  5 15:44:57 2019
+, connection type: TCP, client IP: 0.0.0.0, server IP: 127.0.0.1
+Username: alexandre, login Time: Tue Mar  5 15:45:00 2019
+, connection type: TCP, client IP: 0.0.0.0, server IP: 127.0.0.1
+Username: alexandre, login Time: Tue Mar  5 15:45:03 2019
+, connection type: TCP, client IP: 111.110.32.116, server IP: 127.0.0.1
+Username: alexandre, login Time: Tue Mar  5 15:45:06 2019
+, connection type: TCP
+Username: alexandre, login Time: Tue Mar  5 15:45:22 2019
+, connection type: TCP
+Username: alexandre, login Time: Tue Mar  5 15:45:28 2019
+, connection type: TCP, client IP: 0.0.0.0, server IP: 127.0.0.1
+Username: alexandre, login Time: Tue Mar  5 15:47:46 2019
+, connection type: TCP, client IP: 167.39.155.240, server IP: 127.0.0.1
+Username: alexandre, login Time: Tue Mar  5 15:47:49 2019
+, connection type: TCP, client IP: 111.110.32.116, server IP: 127.0.0.1
+Username: alexandre, login Time: Tue Mar  5 15:47:53 2019
+, connection type: TCP
+Username: alexandre, login Time: Tue Mar  5 15:47:58 2019
+, connection type: TCP
+Username: alexandre, login Time: Tue Mar  5 15:48:03 2019
+, connection type: TCP
+Username: alexandre, login Time: Tue Mar  5 15:48:07 2019
+, connection type: TCP
+Username: alexandre, login Time: Tue Mar  5 15:48:11 2019
+, connection type: TCP
+Username: alexandre, login Time: Tue Mar  5 15:48:15 2019
+, connection type: TCP
+Username: alexandre, login Time: Tue Mar  5 15:48:23 2019
+, connection type: TCP, client IP: 0.0.0.0, server IP: 127.0.0.1
+Username: alexandre, login Time: Tue Mar  5 15:48:32 2019
+, connection type: TCP, client IP: 167.39.155.240, server IP: 127.0.0.1
+Username: alexandre, login Time: Tue Mar  5 23:53:15 2019
+, connection type: TCP, client IP: 0.0.0.0, server IP: 127.0.0.1
+Username: alexandre, login Time: Fri Mar  8 15:04:44 2019
+, connection type: TCP, client IP: 0.0.0.0, server IP: 127.0.0.1
+Username: alexandre, login Time: Fri Mar  8 15:04:51 2019
+, connection type: TCP
+Username: alexandre, login Time: Fri Mar  8 15:05:12 2019
+, connection type: TCP, client IP: 0.0.0.0, server IP: 127.0.0.1
+Username: alexandre, login Time: Fri Mar  8 15:12:14 2019
+, connection type: TCP, client IP: 0.0.0.0, server IP: 127.0.0.1
+Username: alexandre, login Time: Fri Mar  8 15:12:48 2019
+, connection type: TCP
+Username: alexandre, login Time: Fri Mar  8 15:13:07 2019
+, connection type: TCP
+Username: alexandre, login Time: Fri Mar  8 15:13:17 2019
+, connection type: TCP
+Username: alexandre, login Time: Fri Mar  8 15:13:21 2019
+, connection type: TCP
+Username: alexandre, login Time: Fri Mar  8 15:13:26 2019
+, connection type: TCP
