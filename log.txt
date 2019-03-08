@@ -127,3 +127,12 @@ Username: alexandre, login Time: Fri Mar  8 15:13:21 2019
 , connection type: TCP
 Username: alexandre, login Time: Fri Mar  8 15:13:26 2019
 , connection type: TCP
+Username: alexandre, login Time: Fri Mar  8 15:29:10 2019
+, connection type: TCP, client IP: 0.0.0.0, server IP: 127.0.0.1
+Username: alexandre, login Time: Fri Mar  8 15:47:22 2019
+, connection type: TCP, client IP: 0.0.0.0, server IP: 127.0.0.1
+Username: alexandre, login Time: Fri Mar  8 15:48:55 2019
+, connection type: TCP, client IP: 0.0.0.0, server IP: 127.0.0.1
+Username: johan, login Time: Fri Mar  8 15:53:49 2019
+, connection type: TCP, client IP: 0.0.0.0, server IP: 127.0.0.1
+Login verification failed. Aborting.
