@@ -44,7 +44,11 @@ int main(int argc, char const *argv[])
     }
     while (1)
     {
-
+        for(int i =0; i<1000; i++)
+        {
+            buffer[i] = NULL;
+        }
+        
         if (listen(server_fd, 3) < 0)
         {
             perror("listen");
@@ -56,6 +60,7 @@ int main(int argc, char const *argv[])
             perror("accept");
             exit(EXIT_FAILURE);
         }
+
         //recv()
         valread = read(new_socket, buffer, 1000);
         //printf("%s\n", buffer);
@@ -74,7 +79,7 @@ int main(int argc, char const *argv[])
         {
             valRead2[i] = buffer[i];
         }
-
+        
         //printf("Value of length is%d\n", lgt);
 
         if (strcmp(valRead2, "Hello from client, starting text chat")==0)
@@ -85,6 +90,7 @@ int main(int argc, char const *argv[])
         }
         if (strcmp(valRead2, "Hello from client, get photo") == 0)
         {
+            
             FILE *pFile;
             long lSize;
             char *buffer;
@@ -126,14 +132,15 @@ int main(int argc, char const *argv[])
             fclose(pFile);
             send(new_socket, buffer, lSize, 0);
 
-            free(buffer);
+            
 
             printf("\nPhoto sent.\n");
         }
         //send(new_socket , hello , strlen(hello) , 0 );
-
+       
         signal(SIGTERM, cleanExit);
         signal(SIGINT, cleanExit);
+
     }
     return 0;
 }

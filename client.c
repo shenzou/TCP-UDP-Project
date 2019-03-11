@@ -204,18 +204,28 @@ int main(int argc, char const *argv[])
 
     if (DatabaseConnect())
     {
-        printf("Enter your choice: 1 for getting photo, 2 for chat");
-        int choice;
-        char toConvert[4];
-        std::cin.get(toConvert, 4);
-        sscanf(toConvert, "%d", &choice);
-        if(choice == 1)
+        while (1)
         {
-            sendPhoto();
-        }
-        if(choice == 2)
-        {
-            serverAnswer();
+            printf("Enter your choice: 1 for getting photo, 2 for chat\n");
+            int choice;
+            /*
+            char toConvert[4];
+            std::cin.get(toConvert, 4);
+            sscanf(toConvert, "%d", &choice);
+            */
+            scanf("%d", &choice);
+            if (choice == 1)
+            {
+                sendPhoto();
+            }
+            else if (choice == 2)
+            {
+                serverAnswer();
+            }
+            else
+            {
+                break;
+            }
         }
     }
 
