@@ -19,10 +19,9 @@ static int serverAnswer()
     struct sockaddr_in address;
     int sock = 0, valread;
     struct sockaddr_in serv_addr;
-    char *hello = "Hello from client";
+    char *hello = "Hello from client, starting text chat";
     long lSize;
-    //faut changer 31706 (octets) par la taille variable du fichier donc envoyer les données en deux temps
-    char buffer[10000] = {0};
+    char buffer[1000] = {0};
     if ((sock = socket(AF_INET, SOCK_STREAM, 0)) < 0)
     {
         printf("\n Socket creation error \n");
@@ -45,6 +44,16 @@ static int serverAnswer()
     send(sock, hello, strlen(hello), 0);
     printf("Hello message sent\n");
     valread = read(sock, buffer, 10000);
+
+    std::ofstream logFile("log.txt", std::ios::app);
+    char *myIP = inet_ntoa(address.sin_addr);
+    logFile << ", client IP: ";
+    logFile << myIP;
+    char *serverIP = inet_ntoa(serv_addr.sin_addr);
+    logFile << ", server IP: ";
+    logFile << serverIP;
+    logFile.close();
+    return 0;
 }
 
 static int sendPhoto()
@@ -195,7 +204,19 @@ int main(int argc, char const *argv[])
 
     if (DatabaseConnect())
     {
-        sendPhoto();
+        printf("Enter your choice: 1 for getting photo, 2 for chat");
+        int choice;
+        char toConvert[4];
+        std::cin.get(toConvert, 4);
+        sscanf(toConvert, "%d", &choice);
+        if(choice == 1)
+        {
+            sendPhoto();
+        }
+        if(choice == 2)
+        {
+            serverAnswer();
+        }
     }
 
     return 0;
