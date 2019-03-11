@@ -12,9 +12,7 @@ void cleanExit() { exit(0); }
 
 int main(int argc, char const *argv[])
 {
-    while (1)
-    {
-        int server_fd, new_socket, valread;
+    int server_fd, new_socket, valread;
         struct sockaddr_in address;
         int opt = 1;
         int addrlen = sizeof(address);
@@ -44,6 +42,9 @@ int main(int argc, char const *argv[])
             perror("bind failed");
             exit(EXIT_FAILURE);
         }
+    while (1)
+    {
+        
         if (listen(server_fd, 3) < 0)
         {
             perror("listen");
