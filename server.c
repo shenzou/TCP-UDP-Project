@@ -75,8 +75,8 @@ int main(int argc, char const *argv[])
             valRead2[i] = buffer[i];
         }
 
-        printf("Value of length is%d\n", lgt);
-        
+        //printf("Value of length is%d\n", lgt);
+
         if (strcmp(valRead2, "Hello from client, starting text chat")==0)
         {
             printf("\nHello from client, starting text chat\n");
