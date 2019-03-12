@@ -44,11 +44,11 @@ int main(int argc, char const *argv[])
     }
     while (1)
     {
-        for (int i = 0; i < 1000; i++)
+        for(int i =0; i<1000; i++)
         {
             buffer[i] = NULL;
         }
-
+        
         if (listen(server_fd, 3) < 0)
         {
             perror("listen");
@@ -70,7 +70,7 @@ int main(int argc, char const *argv[])
         {
             if (buffer[i] != ' ' && buffer[i] != NULL)
             {
-                lgt = i + 2;
+                lgt = i+2;
                 break;
             }
         }
@@ -79,23 +79,25 @@ int main(int argc, char const *argv[])
         {
             valRead2[i] = buffer[i];
         }
-
+        
         //printf("Value of length is%d\n", lgt);
 
-        if (strcmp(valRead2, "Hello from client, starting text chat") == 0)
+        if (strcmp(valRead2, "Hello from client, starting text chat")==0)
         {
             printf("\nHello from client, starting text chat\n");
             send(new_socket, hello, strlen(hello), 0);
-            printf("Hello from server sent.\n");
+            printf("Hello from server sent.");
         }
         if (strcmp(valRead2, "Hello from client, get photo") == 0)
         {
-            char buffer3[20] = {0};
-
+            
             FILE *pFile;
             long lSize;
             char *buffer;
 
+            size_t result;
+
+            //début de l'ouverture du fichier
             pFile = fopen("photo.jpg", "rb");
             if (pFile == NULL)
             {
@@ -107,55 +109,38 @@ int main(int argc, char const *argv[])
             fseek(pFile, 0, SEEK_END);
             lSize = ftell(pFile);
             rewind(pFile);
-            char *buffer2 = (char *)malloc(sizeof(char) * lSize);
-            if (buffer3 == NULL)
+
+            // allocate memory to contain the whole file:
+            buffer = (char *)malloc(sizeof(char) * lSize);
+            if (buffer == NULL)
             {
                 fputs("Memory error", stderr);
                 exit(2);
             }
-            size_t result;
+
             // data is now in buffer
-            result = fread(buffer2, 1, lSize, pFile);
+            result = fread(buffer, 1, lSize, pFile);
+
             if (result != lSize)
             {
                 fputs("Reading error", stderr);
                 exit(3);
             }
-            printf("\nPhoto file loaded in memory.\n");
+
+            printf("\nle fichier est bien chargeé en mémoire");
+            // terminate
             fclose(pFile);
-            int c = (int)lSize;
+            send(new_socket, buffer, lSize, 0);
 
-            snprintf(buffer3, 20, "%d", c);
-            printf("Decimal value = %s   and length = %ld\n", buffer3, strlen(buffer3));
-
-            int value1 = atoi(buffer3);
-            printf("Value1 = %d\n", value1);
-
-            printf("Sending buffer containing size.\n");
-
-            send(new_socket, buffer3, 15, 0);
-
-            if (listen(server_fd, 3) < 0)
-            {
-                perror("listen");
-                exit(EXIT_FAILURE);
-            }
-            if ((new_socket = accept(server_fd, (struct sockaddr *)&address,
-                                     (socklen_t *)&addrlen)) < 0)
-            {
-                perror("accept");
-                exit(EXIT_FAILURE);
-            }
-
-            printf("\nSending buffer containing photo.\n");
-            send(new_socket, buffer2, lSize * sizeof(char), 0);
+            
 
             printf("\nPhoto sent.\n");
         }
         //send(new_socket , hello , strlen(hello) , 0 );
-
+       
         signal(SIGTERM, cleanExit);
         signal(SIGINT, cleanExit);
+
     }
     return 0;
 }

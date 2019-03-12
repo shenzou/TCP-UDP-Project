@@ -53,7 +53,6 @@ static int serverAnswer()
     char *serverIP = inet_ntoa(serv_addr.sin_addr);
     logFile << ", server IP: ";
     logFile << serverIP;
-    logFile << ", data type: chat";
     logFile.close();
     return 0;
 }
@@ -61,12 +60,12 @@ static int serverAnswer()
 static int sendPhoto()
 {
     struct sockaddr_in address;
-    int sock = 0, valread, valread2;
+    int sock = 0, valread;
     struct sockaddr_in serv_addr;
     char *hello = "Hello from client, get photo";
     long lSize;
     //faut changer 31706 (octets) par la taille variable du fichier donc envoyer les données en deux temps
-    char buffer[20];
+    char buffer[1448978] = {0};
     if ((sock = socket(AF_INET, SOCK_STREAM, 0)) < 0)
     {
         printf("\n Socket creation error \n");
@@ -88,52 +87,20 @@ static int sendPhoto()
     }
     send(sock, hello, strlen(hello), 0);
     printf("Ask for photo sent\n");
-
-    valread = read(sock, buffer, 20);
-
-    printf("Received size of file: %s\n", buffer);
-
-    int value = atoi(buffer);
-
-    if ((sock = socket(AF_INET, SOCK_STREAM, 0)) < 0)
-    {
-        printf("\n Socket creation error \n");
-        return -1;
-    }
-
-    memset(&serv_addr, '0', sizeof(serv_addr));
-
-    serv_addr.sin_family = AF_INET;
-    serv_addr.sin_port = htons(PORT);
-
-    // Convert IPv4 and IPv6 addresses from text to binary form
-    if (inet_pton(AF_INET, "127.0.0.1", &serv_addr.sin_addr) <= 0)
-    {
-        printf("\nInvalid address/ Address not supported \n");
-        return -1;
-    }
-
-    if (connect(sock, (struct sockaddr *)&serv_addr, sizeof(serv_addr)) < 0)
-    {
-        printf("\nConnection Failed \n");
-        return -1;
-    }
-    char *buffer2 = (char *)malloc(value);
-    valread2 = read(sock, buffer2, value);
-
+    
+    valread = read(sock, buffer, 1448978);
 
     //le fichier et créer et l'on y écrit les données
     FILE *pFile2;
-    pFile2 = fopen("photo2.jpg", "wb");
+    pFile2 = fopen("photo2.jpg", "w");
     // 31706 à changer en fonction de la taille de file
     //lSize = ftell (pFile2);
     //rewind (pFile2);
     //fwrite (buffer , lSize,sizeof(char), pFile2);
-    fwrite(buffer2, value, sizeof(char), pFile2);
+    fwrite(buffer, 1448978, sizeof(char), pFile2);
 
     fclose(pFile2);
     //free (buffer);
-    printf("Photo file written.\n");
 
     std::ofstream logFile("log.txt", std::ios::app);
     char *myIP = inet_ntoa(address.sin_addr);
@@ -142,7 +109,6 @@ static int sendPhoto()
     char *serverIP = inet_ntoa(serv_addr.sin_addr);
     logFile << ", server IP: ";
     logFile << serverIP;
-    logFile << ", data type: File sending";
     logFile.close();
     return 0;
 }
