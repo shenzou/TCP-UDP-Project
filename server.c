@@ -46,7 +46,7 @@ int main(int argc, char const *argv[])
     {
         for (int i = 0; i < 1000; i++)
         {
-            buffer[i] = NULL;
+            buffer[i] = (char)0;
         }
 
         if (listen(server_fd, 3) < 0)
@@ -68,7 +68,7 @@ int main(int argc, char const *argv[])
         int lgt = 0;
         for (int i = 1000; i > 0; i--)
         {
-            if (buffer[i] != ' ' && buffer[i] != NULL)
+            if (buffer[i] != ' ' && buffer[i] != (char)0)
             {
                 lgt = i + 2;
                 break;

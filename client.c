@@ -19,7 +19,7 @@ static int serverAnswer()
     struct sockaddr_in address;
     int sock = 0, valread;
     struct sockaddr_in serv_addr;
-    char *hello = "Hello from client, starting text chat";
+    char *hello = (char*)"Hello from client, starting text chat";
     long lSize;
     char buffer[1000] = {0};
     if ((sock = socket(AF_INET, SOCK_STREAM, 0)) < 0)
@@ -44,7 +44,7 @@ static int serverAnswer()
     send(sock, hello, strlen(hello), 0);
     printf("Hello message sent\n");
     valread = read(sock, buffer, 10000);
-    printf("%s\n", &buffer);
+    printf("%s\n", buffer);
 
     std::ofstream logFile("log.txt", std::ios::app);
     char *myIP = inet_ntoa(address.sin_addr);
@@ -63,7 +63,7 @@ static int sendPhoto()
     struct sockaddr_in address;
     int sock = 0, valread, valread2;
     struct sockaddr_in serv_addr;
-    char *hello = "Hello from client, get photo";
+    char *hello = (char*)"Hello from client, get photo";
     long lSize;
     //faut changer 31706 (octets) par la taille variable du fichier donc envoyer les données en deux temps
     char buffer[20];
@@ -149,7 +149,7 @@ static int sendPhoto()
 
 static int callback(void *count, int argc, char **argv, char **azColName) //Method used to get the returned values of sqlite request
 {
-    int *c = count;
+    int *c = (int*)count;
     *c = atoi(argv[0]);
 
     /*
@@ -195,9 +195,9 @@ static int DatabaseConnect()
 
     //Requête SQL
     char buff[100];
-    char *select = "select count(*) from myTable where username='";
-    char *pass = "' and password='";
-    char *end = "'";
+    char *select = (char*)"select count(*) from myTable where username='";
+    char *pass = (char*)"' and password='";
+    char *end = (char*)"'";
 
     //Concaténation de la requête
     strcpy(buff, select);
