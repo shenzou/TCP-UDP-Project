@@ -54,7 +54,7 @@ static int serverAnswer()
 
     while (chatRunning)
     {
-        for(int i=0; i < strlen(bufferChat); i++)
+        for (int i = 0; i < 250; i++)
         {
             bufferChat[i] = 0;
         }
@@ -79,7 +79,7 @@ static int serverAnswer()
             endMessage[i] = message[i];
         }
 
-        if(strcmp(endMessage, "") == 0)
+        if (strcmp(endMessage, "") == 0)
         {
             message = (char *)"exit";
             chatRunning = 0;
@@ -92,21 +92,14 @@ static int serverAnswer()
         {
             printf("\n#Exit : Exit the chat, go back to the main menu.\n#Help : List all the commands.\n");
         }
-        else
-        {
-            send(sock, message, strlen(message), 0);
-            for(int i=0; i < strlen(bufferChat); i++)
-            {
-                bufferChat[i] = 0;
-            }
-            valread = read(sock, bufferChat, 250);
-            printf("'%s' received from server\n", bufferChat);
-        }
 
         send(sock, message, strlen(message), 0);
-        valread = read(sock, buffer, 250);
-        printf("%s", buffer);
-        printf("\n");
+        for (int i = 0; i < strlen(bufferChat); i++)
+        {
+            bufferChat[i] = 0;
+        }
+        valread = read(sock, bufferChat, 250);
+        printf("'%s' received from server\n", bufferChat);
 
         //free(message);
         free(message);

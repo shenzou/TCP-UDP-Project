@@ -1611,3 +1611,15 @@ Username: alexandre, login Time: Wed Mar 13 16:40:03 2019
 , connection type: TCP
 Username: alexandre, login Time: Wed Mar 13 16:40:18 2019
 , connection type: TCP
+Username: alexandre, login Time: Wed Mar 13 16:42:00 2019
+, connection type: TCP, client IP: 0.0.0.0, server IP: 127.0.0.1, data type: chat, client IP: 0.0.0.0, server IP: 127.0.0.1, data type: chat
+Username: alexandre, login Time: Wed Mar 13 16:43:56 2019
+, connection type: TCP
+Username: alexandre, login Time: Wed Mar 13 16:44:26 2019
+, connection type: TCP, client IP: 0.0.0.0, server IP: 127.0.0.1, data type: chat
+Username: alexandre, login Time: Wed Mar 13 16:49:52 2019
+, connection type: TCP, client IP: 0.0.0.0, server IP: 127.0.0.1, data type: chat
+Username: alexandre, login Time: Wed Mar 13 16:52:15 2019
+, connection type: TCP, client IP: 0.0.0.0, server IP: 127.0.0.1, data type: chat
+Username: alexandre, login Time: Wed Mar 13 16:54:22 2019
+, connection type: TCP, client IP: 0.0.0.0, server IP: 127.0.0.1, data type: chat, client IP: 0.0.0.0, server IP: 127.0.0.1, data type: chat, client IP: 0.0.0.0, server IP: 127.0.0.1, data type: File sending, client IP: 0.0.0.0, server IP: 127.0.0.1, data type: File sending, client IP: 0.0.0.0, server IP: 127.0.0.1, data type: File sending
