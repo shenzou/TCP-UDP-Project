@@ -19,7 +19,7 @@ static int serverAnswer()
     struct sockaddr_in address;
     int sock = 0, valread;
     struct sockaddr_in serv_addr;
-    char *hello = (char*)"Hello from client, starting text chat";
+    char *hello = (char *)"Hello from client, starting text chat";
     long lSize;
     char buffer[1000] = {0};
     if ((sock = socket(AF_INET, SOCK_STREAM, 0)) < 0)
@@ -48,17 +48,21 @@ static int serverAnswer()
 
     int chatRunning = 1;
 
-    while(chatRunning)
+    char bufferChat[250];
+
+    while (chatRunning)
     {
+        for(int i=0; i < strlen(bufferChat); i++)
+        {
+            bufferChat[i] = 0;
+        }
         std::cin.ignore();
-        printf("\nEnter message to send: (Type exit to quit the chat)\n");
-        //char message[250];
-        char *message = (char*)malloc(250);
-        
+        printf("\nEnter message to send: (Type #Help for more commands)\n");
+        char *message = (char *)malloc(250);
+
         std::cin.get(message, 250);
         std::cout.flush();
         int lgt = 0;
-        printf("%s\n", message);
         for (int i = 250; i > 0; i--)
         {
             if (message[i] != ' ' && message[i] != (char)0)
@@ -72,22 +76,33 @@ static int serverAnswer()
         {
             endMessage[i] = message[i];
         }
-        if(strcmp(endMessage, "exit") == 0)
+        if (strcmp(endMessage, "#Exit") == 0)
         {
             chatRunning = 0;
             send(sock, message, strlen(message), 0);
             valread = read(sock, buffer, 250);
-            printf("%s\n", buffer);
+            printf("\n%s\n", buffer);
             free(message);
             break;
         }
+        else if (!strcmp(endMessage, "#Help"))
+        {
+            printf("\n#Exit : Exit the chat, go back to the main menu.\n#Help : List all the commands.\n");
+        }
+        else
+        {
+            send(sock, message, strlen(message), 0);
+            for(int i=0; i < strlen(bufferChat); i++)
+            {
+                bufferChat[i] = 0;
+            }
+            valread = read(sock, bufferChat, 250);
+            printf("'%s' received from server\n", bufferChat);
+        }
 
-        send(sock, message, strlen(message), 0);
-        valread = read(sock, buffer, 250);
-        printf("%s\n", buffer);
         free(message);
     }
-    
+
     std::ofstream logFile("log.txt", std::ios::app);
     char *myIP = inet_ntoa(address.sin_addr);
     logFile << ", client IP: ";
@@ -105,7 +120,7 @@ static int sendPhoto()
     struct sockaddr_in address;
     int sock = 0, valread, valread2;
     struct sockaddr_in serv_addr;
-    char *hello = (char*)"Hello from client, get photo";
+    char *hello = (char *)"Hello from client, get photo";
     long lSize;
     //faut changer 31706 (octets) par la taille variable du fichier donc envoyer les données en deux temps
     char buffer[20];
@@ -163,7 +178,6 @@ static int sendPhoto()
     char *buffer2 = (char *)malloc(value);
     valread2 = read(sock, buffer2, value);
 
-
     //le fichier et créer et l'on y écrit les données
     FILE *pFile2;
     pFile2 = fopen("photo2.jpg", "wb");
@@ -191,7 +205,7 @@ static int sendPhoto()
 
 static int callback(void *count, int argc, char **argv, char **azColName) //Method used to get the returned values of sqlite request
 {
-    int *c = (int*)count;
+    int *c = (int *)count;
     *c = atoi(argv[0]);
 
     /*
@@ -237,9 +251,9 @@ static int DatabaseConnect()
 
     //Requête SQL
     char buff[100];
-    char *select = (char*)"select count(*) from myTable where username='";
-    char *pass = (char*)"' and password='";
-    char *end = (char*)"'";
+    char *select = (char *)"select count(*) from myTable where username='";
+    char *pass = (char *)"' and password='";
+    char *end = (char *)"'";
 
     //Concaténation de la requête
     strcpy(buff, select);

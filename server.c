@@ -96,7 +96,7 @@ int main(int argc, char const *argv[])
                     bufferChat[i] = 0;
                 }
                 int serverRead;
-                    serverRead = read(new_socket, bufferChat, 250);
+                serverRead = read(new_socket, bufferChat, 250);
                 printf("%s\n", bufferChat);
                 int lgt = 0;
                 for (int i = 250; i > 0; i--)
@@ -120,7 +120,7 @@ int main(int argc, char const *argv[])
                     break;
                 }
                 char message[250] = "received by server.";
-                send(new_socket, message, strlen(message), 0);
+                send(new_socket, bufferChat, strlen(bufferChat), 0);
             }
         }
         if (strcmp(valRead2, "Hello from client, get photo") == 0)
