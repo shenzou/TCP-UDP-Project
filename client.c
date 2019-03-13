@@ -50,18 +50,21 @@ static int serverAnswer()
 
     int chatRunning = 1;
 
+    char bufferChat[250];
+
     while (chatRunning)
     {
+        for(int i=0; i < strlen(bufferChat); i++)
+        {
+            bufferChat[i] = 0;
+        }
         std::cin.ignore();
-        printf("\nEnter message to send: (Type exit to quit the chat)\n");
-        //char message[250];
-
+        printf("\nEnter message to send: (Type #Help for more commands)\n");
         char *message = (char *)malloc(250);
 
         std::cin.get(message, 250);
         std::cout.flush();
         int lgt = 0;
-        printf("%s\n", message);
         for (int i = 250; i > 0; i--)
         {
             if (message[i] != ' ' && message[i] != (char)0)
@@ -81,9 +84,23 @@ static int serverAnswer()
             message = (char *)"exit";
             chatRunning = 0;
         }
-        if (strcmp(endMessage, "exit") == 0)
+        if (strcmp(endMessage, "#exit") == 0)
         {
             chatRunning = 0;
+        }
+        else if (!strcmp(endMessage, "#Help"))
+        {
+            printf("\n#Exit : Exit the chat, go back to the main menu.\n#Help : List all the commands.\n");
+        }
+        else
+        {
+            send(sock, message, strlen(message), 0);
+            for(int i=0; i < strlen(bufferChat); i++)
+            {
+                bufferChat[i] = 0;
+            }
+            valread = read(sock, bufferChat, 250);
+            printf("'%s' received from server\n", bufferChat);
         }
 
         send(sock, message, strlen(message), 0);
@@ -92,6 +109,7 @@ static int serverAnswer()
         printf("\n");
 
         //free(message);
+        free(message);
     }
 
     std::ofstream logFile("log.txt", std::ios::app);
