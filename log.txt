@@ -360,3 +360,43 @@ Username: johan, login Time: Fri Mar  8 15:53:49 2019
 , connection type: TCP, client IP: 0.0.0.0, server IP: 127.0.0.1
 >>>>>>> multithread
 Login verification failed. Aborting.
+Username: johan, login Time: Tue Mar 12 14:05:17 2019
+, connection type: TCP, client IP: 0.0.0.0, server IP: 127.0.0.1, data type: File sending, client IP: 0.0.0.0, server IP: 127.0.0.1, data type: File sending
+Username: alexandre, login Time: Tue Mar 12 14:05:25 2019
+, connection type: TCP, client IP: 0.0.0.0, server IP: 127.0.0.1, data type: File sending, client IP: 0.0.0.0, server IP: 127.0.0.1, data type: chat
+Username: alexandre, login Time: Wed Mar 13 11:00:33 2019
+, connection type: TCP
+Username: alexandre, login Time: Wed Mar 13 11:04:14 2019
+, connection type: TCP
+Username: alexandre, login Time: Wed Mar 13 11:07:10 2019
+, connection type: TCP
+Username: alexandre, login Time: Wed Mar 13 11:08:05 2019
+, connection type: TCP
+Username: alexandre, login Time: Wed Mar 13 11:08:52 2019
+, connection type: TCP
+Username: alexandre, login Time: Wed Mar 13 11:10:11 2019
+, connection type: TCP
+Username: alexandre, login Time: Wed Mar 13 11:11:15 2019
+, connection type: TCP
+Username: alexandre, login Time: Wed Mar 13 11:13:44 2019
+, connection type: TCP
+Username: alexandre, login Time: Wed Mar 13 11:14:12 2019
+, connection type: TCP
+Username: alexandre, login Time: Wed Mar 13 11:15:38 2019
+, connection type: TCP, client IP: 254.127.0.0, server IP: 127.0.0.1, data type: chat, client IP: 254.127.0.0, server IP: 127.0.0.1, data type: chat, client IP: 254.127.0.0, server IP: 127.0.0.1, data type: chat
+Username: alexandre, login Time: Wed Mar 13 11:17:21 2019
+, connection type: TCP, client IP: 254.127.0.0, server IP: 127.0.0.1, data type: chat, client IP: 254.127.0.0, server IP: 127.0.0.1, data type: chat, client IP: 254.127.0.0, server IP: 127.0.0.1, data type: chat
+Username: alexandre, login Time: Wed Mar 13 11:19:49 2019
+, connection type: TCP, client IP: 0.0.0.0, server IP: 127.0.0.1, data type: chat
+Username: alexandre, login Time: Wed Mar 13 11:20:35 2019
+, connection type: TCP
+Username: alexandre, login Time: Wed Mar 13 11:23:05 2019
+, connection type: TCP
+Username: alexandre, login Time: Wed Mar 13 11:23:49 2019
+, connection type: TCP
+Username: alexandre, login Time: Wed Mar 13 11:26:32 2019
+, connection type: TCP
+Username: alexandre, login Time: Wed Mar 13 11:27:50 2019
+, connection type: TCP
+Username: alexandre, login Time: Wed Mar 13 11:29:38 2019
+, connection type: TCP

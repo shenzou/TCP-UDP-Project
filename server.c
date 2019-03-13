@@ -84,9 +84,44 @@ int main(int argc, char const *argv[])
 
         if (strcmp(valRead2, "Hello from client, starting text chat") == 0)
         {
+            char bufferChat[250];
             printf("\nHello from client, starting text chat\n");
             send(new_socket, hello, strlen(hello), 0);
             printf("Hello from server sent.\n");
+            int chatRunning = 1;
+            while (chatRunning)
+            {
+                for(int i=0; i<250; i++)
+                {
+                    bufferChat[i] = 0;
+                }
+                int serverRead;
+                    serverRead = read(new_socket, bufferChat, 250);
+                printf("%s\n", bufferChat);
+                int lgt = 0;
+                for (int i = 250; i > 0; i--)
+                {
+                    if (bufferChat[i] != ' ' && bufferChat[i] != (char)0)
+                    {
+                        lgt = i + 2;
+                        break;
+                    }
+                }
+                char endMessage[lgt];
+                for (int i = 0; i < lgt; i++)
+                {
+                    endMessage[i] = bufferChat[i];
+                }
+                if (strcmp(endMessage, "exit") == 0)
+                {
+                    chatRunning = 0;
+                    char end[250] = "Sent from server: end of chat.";
+                    send(new_socket, end, strlen(end), 0);
+                    break;
+                }
+                char message[250] = "received by server.";
+                send(new_socket, message, strlen(message), 0);
+            }
         }
         if (strcmp(valRead2, "Hello from client, get photo") == 0)
         {

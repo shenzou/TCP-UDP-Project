@@ -46,6 +46,48 @@ static int serverAnswer()
     valread = read(sock, buffer, 10000);
     printf("%s\n", buffer);
 
+    int chatRunning = 1;
+
+    while(chatRunning)
+    {
+        std::cin.ignore();
+        printf("Enter message to send:\n");
+        //char message[250];
+        char *message = (char*)malloc(250);
+        
+        std::cin.getline(message, 250);
+        std::cout.flush();
+        int lgt = 0;
+        printf("%s\n", message);
+        for (int i = 250; i > 0; i--)
+        {
+            if (message[i] != ' ' && message[i] != (char)0)
+            {
+                lgt = i + 2;
+                break;
+            }
+        }
+        char endMessage[lgt];
+        for (int i = 0; i < lgt; i++)
+        {
+            endMessage[i] = message[i];
+        }
+        if(strcmp(endMessage, "exit") == 0)
+        {
+            chatRunning = 0;
+            send(sock, message, strlen(message), 0);
+            valread = read(sock, buffer, 250);
+            printf("%s\n", buffer);
+            free(message);
+            break;
+        }
+
+        send(sock, message, strlen(message), 0);
+        valread = read(sock, buffer, 250);
+        printf("%s\n", buffer);
+        free(message);
+    }
+    
     std::ofstream logFile("log.txt", std::ios::app);
     char *myIP = inet_ntoa(address.sin_addr);
     logFile << ", client IP: ";
