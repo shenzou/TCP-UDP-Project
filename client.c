@@ -51,11 +51,11 @@ static int serverAnswer()
     while(chatRunning)
     {
         std::cin.ignore();
-        printf("Enter message to send:\n");
+        printf("\nEnter message to send: (Type exit to quit the chat)\n");
         //char message[250];
         char *message = (char*)malloc(250);
         
-        std::cin.getline(message, 250);
+        std::cin.get(message, 250);
         std::cout.flush();
         int lgt = 0;
         printf("%s\n", message);

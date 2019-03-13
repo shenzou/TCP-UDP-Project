@@ -400,3 +400,21 @@ Username: alexandre, login Time: Wed Mar 13 11:27:50 2019
 , connection type: TCP
 Username: alexandre, login Time: Wed Mar 13 11:29:38 2019
 , connection type: TCP
+Username: alexandre, login Time: Wed Mar 13 14:28:37 2019
+, connection type: TCP
+Username: alexandre, login Time: Wed Mar 13 14:28:58 2019
+, connection type: TCP, client IP: 0.0.0.0, server IP: 127.0.0.1, data type: File sending
+Username: alexandre, login Time: Wed Mar 13 14:31:28 2019
+, connection type: TCP
+Username: alexandre, login Time: Wed Mar 13 14:31:41 2019
+, connection type: TCP, client IP: 0.0.0.0, server IP: 127.0.0.1, data type: chat, client IP: 0.0.0.0, server IP: 127.0.0.1, data type: chat
+Username: alexandre, login Time: Wed Mar 13 14:33:54 2019
+, connection type: TCP
+Username: alexandre, login Time: Wed Mar 13 14:35:41 2019
+, connection type: TCP
+Username: alexandre, login Time: Wed Mar 13 14:36:46 2019
+, connection type: TCP, client IP: 0.0.0.0, server IP: 127.0.0.1, data type: chat, client IP: 0.0.0.0, server IP: 127.0.0.1, data type: chat, client IP: 0.0.0.0, server IP: 127.0.0.1, data type: File sending
+Username: alexandre, login Time: Wed Mar 13 14:37:53 2019
+, connection type: TCP, client IP: 0.0.0.0, server IP: 127.0.0.1, data type: chat
+Username: alexandre, login Time: Wed Mar 13 14:38:58 2019
+, connection type: TCP, client IP: 167.39.155.240, server IP: 127.0.0.1, data type: chat
