@@ -112,7 +112,7 @@ int main(int argc, char const *argv[])
                 {
                     endMessage[i] = bufferChat[i];
                 }
-                if (strcmp(endMessage, "exit") == 0)
+                if (strcmp(endMessage, "#exit") == 0)
                 {
                     chatRunning = 0;
                     char end[250] = "Sent from server: end of chat.";
