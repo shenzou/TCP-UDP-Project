@@ -1623,3 +1623,54 @@ Username: alexandre, login Time: Wed Mar 13 16:52:15 2019
 , connection type: TCP, client IP: 0.0.0.0, server IP: 127.0.0.1, data type: chat
 Username: alexandre, login Time: Wed Mar 13 16:54:22 2019
 , connection type: TCP, client IP: 0.0.0.0, server IP: 127.0.0.1, data type: chat, client IP: 0.0.0.0, server IP: 127.0.0.1, data type: chat, client IP: 0.0.0.0, server IP: 127.0.0.1, data type: File sending, client IP: 0.0.0.0, server IP: 127.0.0.1, data type: File sending, client IP: 0.0.0.0, server IP: 127.0.0.1, data type: File sending
+Login verification failed. Aborting.
+Login verification failed. Aborting.
+Username: johan, login Time: Wed Mar 13 17:36:31 2019
+, connection type: TCP
+Username: johan, login Time: Wed Mar 13 17:47:04 2019
+, connection type: TCP
+Username: johan, login Time: Wed Mar 13 17:47:31 2019
+, connection type: TCP
+Username: johan, login Time: Wed Mar 13 17:49:28 2019
+, connection type: TCP
+Username: johan, login Time: Wed Mar 13 17:53:36 2019
+, connection type: TCP
+Username: johan, login Time: Wed Mar 13 17:54:14 2019
+, connection type: TCP
+Login verification failed. Aborting.
+Username: johan, login Time: Wed Mar 13 17:56:05 2019
+, connection type: TCP
+Username: johan, login Time: Wed Mar 13 17:56:47 2019
+, connection type: TCP
+Username: johan, login Time: Wed Mar 13 17:57:08 2019
+, connection type: TCP, client IP: 0.0.0.0, server IP: 127.0.0.1, data type: chat
+Username: johan, login Time: Wed Mar 13 18:00:12 2019
+, connection type: TCP
+Username: johan, login Time: Wed Mar 13 18:01:16 2019
+, connection type: TCP
+Login verification failed. Aborting.
+Login verification failed. Aborting.
+Username: johan, login Time: Wed Mar 13 18:02:14 2019
+, connection type: TCP
+Username: johan, login Time: Wed Mar 13 18:03:22 2019
+, connection type: TCP
+Username: johan, login Time: Wed Mar 13 18:04:57 2019
+, connection type: TCP
+Username: johan, login Time: Wed Mar 13 18:10:54 2019
+, connection type: TCP
+Username: johan, login Time: Wed Mar 13 18:42:46 2019
+, connection type: TCP, client IP: 0.0.0.0, server IP: 127.0.0.1, data type: chat
+Username: johan, login Time: Wed Mar 13 18:43:26 2019
+, connection type: TCP, client IP: 0.0.0.0, server IP: 127.0.0.1, data type: chat
+Username: johan, login Time: Wed Mar 13 18:44:31 2019
+, connection type: TCP
+Username: johan, login Time: Wed Mar 13 18:48:13 2019
+, connection type: TCP, client IP: 0.0.0.0, server IP: 127.0.0.1, data type: chat
+Username: johan, login Time: Wed Mar 13 18:50:42 2019
+, connection type: TCP
+Username: johan, login Time: Wed Mar 13 18:51:27 2019
+, connection type: TCP, client IP: 0.0.0.0, server IP: 127.0.0.1, data type: chat
+Username: johan, login Time: Wed Mar 13 18:52:25 2019
+, connection type: TCP, client IP: 0.0.0.0, server IP: 127.0.0.1, data type: chat
+Username: johan, login Time: Wed Mar 13 18:54:25 2019
+, connection type: TCP, client IP: 0.0.0.0, server IP: 127.0.0.1, data type: chat

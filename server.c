@@ -112,14 +112,13 @@ int main(int argc, char const *argv[])
                 {
                     endMessage[i] = bufferChat[i];
                 }
-                if (strcmp(endMessage, "#exit") == 0)
+                if (strcmp(endMessage, "#Exit") == 0)
                 {
                     chatRunning = 0;
-                    char end[250] = "Sent from server: end of chat.";
+                    char end[250] = "End of chat";
                     send(new_socket, end, strlen(end), 0);
                     break;
                 }
-                char message[250] = "received by server.";
                 send(new_socket, bufferChat, strlen(bufferChat), 0);
             }
         }

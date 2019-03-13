@@ -81,10 +81,19 @@ static int serverAnswer()
 
         if (strcmp(endMessage, "") == 0)
         {
-            message = (char *)"exit";
-            chatRunning = 0;
+            std::ofstream logFile("log.txt", std::ios::app);
+            char *myIP = inet_ntoa(address.sin_addr);
+            logFile << ", client IP: ";
+            logFile << myIP;
+            char *serverIP = inet_ntoa(serv_addr.sin_addr);
+            logFile << ", server IP: ";
+            logFile << serverIP;
+            logFile << ", data type: chat";
+            logFile.close();
+            printf("No entry, back to the main menu.\n");
+            return 0;
         }
-        if (strcmp(endMessage, "#exit") == 0)
+        if (!strcmp(endMessage, "#Exit")/* || endMessage == NULL*/)
         {
             chatRunning = 0;
         }
@@ -92,16 +101,17 @@ static int serverAnswer()
         {
             printf("\n#Exit : Exit the chat, go back to the main menu.\n#Help : List all the commands.\n");
         }
-
-        send(sock, message, strlen(message), 0);
-        for (int i = 0; i < strlen(bufferChat); i++)
+        else
         {
-            bufferChat[i] = 0;
-        }
-        valread = read(sock, bufferChat, 250);
-        printf("'%s' received from server\n", bufferChat);
+            send(sock, message, strlen(message), 0);
+            for (int i = 0; i < strlen(bufferChat); i++)
+            {
+                bufferChat[i] = 0;
+            }
+            valread = read(sock, bufferChat, 250);
+            printf("'%s' received from server\n", bufferChat);
+        }      
 
-        //free(message);
         free(message);
     }
 
@@ -297,8 +307,9 @@ int Initialize()
 {
     if (DatabaseConnect())
     {
+        int i = 0;
         int choice;
-        while (1)
+        while (i == 0)
         {
             printf("\nEnter your choice: 1 for getting photo, 2 for chat\n");
             /*
@@ -317,11 +328,11 @@ int Initialize()
             }
             if (choice == 1)
             {
-                sendPhoto();
+                i = sendPhoto();
             }
             else if (choice == 2)
             {
-                serverAnswer();
+                i = serverAnswer();
             }
             else
             {
