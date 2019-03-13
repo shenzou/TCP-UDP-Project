@@ -14,12 +14,14 @@
 
 #define PORT 8080
 
+int Initialize();
+
 static int serverAnswer()
 {
     struct sockaddr_in address;
     int sock = 0, valread;
     struct sockaddr_in serv_addr;
-    char *hello = (char*)"Hello from client, starting text chat";
+    char *hello = (char *)"Hello from client, starting text chat";
     long lSize;
     char buffer[1000] = {0};
     if ((sock = socket(AF_INET, SOCK_STREAM, 0)) < 0)
@@ -42,19 +44,20 @@ static int serverAnswer()
         return -1;
     }
     send(sock, hello, strlen(hello), 0);
-    printf("Hello message sent\n");
+    printf("\nHello message sent\n");
     valread = read(sock, buffer, 10000);
     printf("%s\n", buffer);
 
     int chatRunning = 1;
 
-    while(chatRunning)
+    while (chatRunning)
     {
         std::cin.ignore();
         printf("\nEnter message to send: (Type exit to quit the chat)\n");
         //char message[250];
-        char *message = (char*)malloc(250);
-        
+
+        char *message = (char *)malloc(250);
+
         std::cin.get(message, 250);
         std::cout.flush();
         int lgt = 0;
@@ -67,27 +70,30 @@ static int serverAnswer()
                 break;
             }
         }
-        char endMessage[lgt];
+        char endMessage[lgt] = {0};
         for (int i = 0; i < lgt; i++)
         {
             endMessage[i] = message[i];
         }
-        if(strcmp(endMessage, "exit") == 0)
+
+        if(strcmp(endMessage, "") == 0)
+        {
+            message = (char *)"exit";
+            chatRunning = 0;
+        }
+        if (strcmp(endMessage, "exit") == 0)
         {
             chatRunning = 0;
-            send(sock, message, strlen(message), 0);
-            valread = read(sock, buffer, 250);
-            printf("%s\n", buffer);
-            free(message);
-            break;
         }
 
         send(sock, message, strlen(message), 0);
         valread = read(sock, buffer, 250);
-        printf("%s\n", buffer);
-        free(message);
+        printf("%s", buffer);
+        printf("\n");
+
+        //free(message);
     }
-    
+
     std::ofstream logFile("log.txt", std::ios::app);
     char *myIP = inet_ntoa(address.sin_addr);
     logFile << ", client IP: ";
@@ -105,7 +111,7 @@ static int sendPhoto()
     struct sockaddr_in address;
     int sock = 0, valread, valread2;
     struct sockaddr_in serv_addr;
-    char *hello = (char*)"Hello from client, get photo";
+    char *hello = (char *)"Hello from client, get photo";
     long lSize;
     //faut changer 31706 (octets) par la taille variable du fichier donc envoyer les données en deux temps
     char buffer[20];
@@ -163,7 +169,6 @@ static int sendPhoto()
     char *buffer2 = (char *)malloc(value);
     valread2 = read(sock, buffer2, value);
 
-
     //le fichier et créer et l'on y écrit les données
     FILE *pFile2;
     pFile2 = fopen("photo2.jpg", "wb");
@@ -191,7 +196,7 @@ static int sendPhoto()
 
 static int callback(void *count, int argc, char **argv, char **azColName) //Method used to get the returned values of sqlite request
 {
-    int *c = (int*)count;
+    int *c = (int *)count;
     *c = atoi(argv[0]);
 
     /*
@@ -237,9 +242,9 @@ static int DatabaseConnect()
 
     //Requête SQL
     char buff[100];
-    char *select = (char*)"select count(*) from myTable where username='";
-    char *pass = (char*)"' and password='";
-    char *end = (char*)"'";
+    char *select = (char *)"select count(*) from myTable where username='";
+    char *pass = (char *)"' and password='";
+    char *end = (char *)"'";
 
     //Concaténation de la requête
     strcpy(buff, select);
@@ -277,15 +282,14 @@ static int DatabaseConnect()
     return count;
 }
 
-int main(int argc, char const *argv[])
+int Initialize()
 {
-
     if (DatabaseConnect())
     {
+        int choice;
         while (1)
         {
-            printf("Enter your choice: 1 for getting photo, 2 for chat\n");
-            int choice;
+            printf("\nEnter your choice: 1 for getting photo, 2 for chat\n");
             /*
             char toConvert[4];
             std::cin.get(toConvert, 4);
@@ -315,6 +319,12 @@ int main(int argc, char const *argv[])
             }
         }
     }
+    return 0;
+}
+
+int main(int argc, char const *argv[])
+{
+    Initialize();
 
     return 0;
 }
